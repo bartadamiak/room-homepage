@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 12px;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    background: #000000;
+    
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+}
+
+.hide {
+    display: none;
+}
+
+.grid {
+    background: #ffffff;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(200px, 420px) 0.5fr 0.2fr minmax(200px, 440px);
+    grid-template-areas: "header header header header"
+    "discover discover discover discover"
+    "about-image about-image about-image about-image"
+    "about-text about-text about-text about-text"
+    "about-image2 about-image2 about-image2 about-image2";
+
+}
+
+
+.header {
+    grid-area: header;
+    height: 360px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "hamburger logo .";
+}
+
+.mobile1 {
+    background: url("../../images/mobile1.jpg");
+    background-size: cover;
+}
+
+.mobile2 {
+    background: url("../../images/mobile2.jpg");
+    background-size: cover;
+}
+
+.mobile3 {
+    background: url("../../images/mobile3.jpg");
+    background-size: cover;
+}
+
+
+
+.hamburger {
+    grid-area: hamburger;
+}
+
+.navigation {
+    display: none;
+    
+}
+
+.logo {
+    grid-area: logo;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.discover-section {
+    grid-area: discover;
+    padding: 5.8rem 3rem;
+    position: relative;
+    background: #ffffff;
+    
+    
+}
+
+.discover-section h1 {
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.discover-about {
+    margin: 1.6rem auto 4.6rem auto;
+    color: hsl(0, 0%, 63%);
+    line-height: 1.5;
+}
+
+.discover-about2 {
+    margin: 1.6rem auto 0 auto;
+    color: hsl(0, 0%, 63%);
+    line-height: 1.5;
+    
+}
+
+.shop-btn {
+    margin: 0 auto;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    color: hsl(0, 0%, 63%);
+    cursor: pointer;
+}
+
+.shop-btn img {
+    margin-left: 2rem;
+    color: hsl(0, 0%, 63%);
+}
+
+.arrows {
+    display: flex;
+    position: absolute;
+    top: -5.9rem;
+    right: 0;
+}
+
+.left-arrow, .right-arrow {
+    background: #000000;
+    padding: 1.8rem 2.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.left-arrow:hover, .right-arrow:hover {
+    background: hsl(0, 0%, 27%);
+}
+
+
+
+
+.about-image-section {
+    grid-area: about-image;
+    background: #ffffff;
+    
+}
+
+.about-image-section img {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+
+}
+
+.about-text-section {
+    grid-area: about-text;
+    padding: 5rem 3rem;
+    background: #ffffff;
+}
+
+.about-image-section2 {
+    grid-area: about-image2;
+    background: #ffffff;
+}
+
+.about-image-section2 img {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+    display: block;
+}   
+
+
+.footer {
+    margin: 0 auto;
+    text-align: center;
+    color: #ffffff;
+    padding: 2rem;
+    font-size: calc(0.5rem + 0.5vw);
+    font-weight: 300;
+
+    a {
+        color: #fff;
+        font-weight: 700;
+    }
+}
+
+@media (min-width: 375px) {
+    .header {
+        grid-area: header;
+        
+        background-repeat: no-repeat;
+        height: 534px;
+    }
+
+    .desktop1 {
+        background: url("../../images/desktop1.jpg");
+        background-size: cover;
+    }
+
+    .desktop2 {
+        background: url("../../images/desktop2.jpg");
+        background-size: cover;
+    }
+
+    .desktop3 {
+        background: url("../../images/desktop3.jpg");
+        background-size: cover;
+    }
+}
+
+
+@media (min-width: 420px) {
+    .grid {
+    
+        grid-template-columns: minmax(200px, 420px) 0.5fr 0.5fr minmax(200px, 440px);
+        grid-template-areas: "header header header header"
+        "discover discover discover discover"
+        "about-image about-image about-image2 about-image2"
+        "about-text about-text about-text about-text";
+    
+    }
+}
+
+@media (min-width: 980px)  {
+    .grid {
+    
+        grid-template-columns: 1fr 0.3fr 0.3fr 0.3fr 0.15fr 1.1fr;
+        grid-template-areas: "header header header header discover discover"
+        "about-image about-text about-text about-text about-image2 about-image2"
+        ;
+    }
+
+    .about-image-section {
+        justify-self: start;
+    }
+
+    .about-image-section2 {
+        justify-self: end;
+    }
+
+    .about-image-section2, .about-image-section {
+        background: #ffffff;
+    } 
+
+    .about-text-section {
+        grid-area: about-text;
+        padding: 5rem 3rem 0 3rem;
+        background: #ffffff;
+    }
+
+
+    .arrows {
+        display: flex;
+        justify-content: start;
+        align-items: flex-end;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      
+    }
+
+    .header {
+        grid-template-columns: 0.3fr 1fr 0.3fr;
+        grid-template-rows: min-content 1fr;
+        grid-template-areas: "logo navigation navigation"
+        ". . .";
+        
+    }
+
+    .logo {
+        justify-content: start;
+        margin: 0;
+    }
+    
+    .hamburger {
+        display: none;
+    }
+
+    .navigation {
+        display: flex;
+        justify-self: start;
+        grid-area: navigation;
+         
+    }
+
+    .navigation a {
+        color: #ffffff;
+        margin-right: 2.5rem;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.2rem;
+        position: relative;
+        
+    }
+
+    .navigation a:hover::before {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 30%;
+        position: absolute;
+        bottom: -10px;
+        right: 30%;
+
+        background: #ffffff;
+        
+    }
+}
+
+@media (min-width: 1360px) {
+    .discover-section {
+        grid-area: discover;
+        padding: 8rem 7rem;
+      
+        
+    }
+
+    
+    
+}
